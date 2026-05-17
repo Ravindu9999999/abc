@@ -1,4 +1,4 @@
-name: Node.js CI/CD Workflow
+name: RV GAMES CI/CD Workflow
 
 on:
   workflow_dispatch:
@@ -21,13 +21,13 @@ jobs:
 
       - name: Run Bot (loop & auto-restart if crash)
         run: |
-          echo "Running Asitha bot in auto-restart mode..."
-          timeout 18000 bash -c 'while true; do node start.js || echo "Bot crashed, restarting..."; sleep 2; done'
+          echo "Running RV GAMES bot in auto-restart mode..."
+          timeout 18000 bash -c 'while true; do node start.js || echo "RV GAMES bot crashed, restarting..."; sleep 2; done'
 
       - name: Re-Trigger Workflow
         if: always()
         run: |
-          echo "Re-running workflow..."
+          echo "Re-running RV GAMES workflow..."
           curl -X POST \
             -H "Authorization: Bearer ${{ secrets.PERSONAL_TOKEN }}" \
             -H "Accept: application/vnd.github.v3+json" \
